@@ -1,0 +1,238 @@
+Problem
+A positive integer 
+ 
+X is called lucky if it has an even power of 
+2
+2 in its prime factorization. More formally, let 
+ 
+p be the largest integer such that 
+ 
+X is divisible by 
+2
+ 
+2 
+p
+ . Then 
+ 
+X is a lucky number if and only if 
+ 
+p is divisible by 
+2
+2.
+
+You are given a positive integer 
+ 
+N. Find if it is a lucky number.
+
+Input Format
+The first line of the input contains a single integer 
+ 
+T - the number of test cases. The description of 
+ 
+T test cases follows.
+
+The first line of each test case contains a single integer 
+ 
+N.
+
+Output Format
+For each test case, print a single line containing one integer. That integer should be 
+1
+1 if 
+ 
+N is a lucky number and 
+0
+0 otherwise.
+Constraints
+1
+≤
+ 
+≤
+1
+0
+4
+1≤T≤10 
+4
+ 
+1
+≤
+ 
+≤
+1
+0
+18
+1≤N≤10 
+18
+ 
+Subtasks
+Subtask #1 (100 points): original constraints
+
+Sample 1:
+Input
+Output
+6
+1
+2 
+3
+4
+8
+48
+1
+0
+1
+1
+0
+1
+Explanation:
+Example case 1: Number 
+ 
+=
+1
+N=1 has 
+2
+2 to the power of 
+0
+0 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Example case 2: Number 
+ 
+=
+2
+N=2 has 
+2
+2 to the power of 
+1
+1 in its prime factorization. Therefore, it is not lucky and the answer is 
+0
+0.
+
+Example case 3: Number 
+ 
+=
+3
+N=3 has 
+2
+2 to the power of 
+0
+0 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Example case 4: Number 
+ 
+=
+4
+N=4 has 
+2
+2 to the power of 
+2
+2 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Example case 5: Number 
+ 
+=
+8
+N=8 has 
+2
+2 to the power of 
+3
+3 in its prime factorization. Therefore, it is not lucky and the answer is 
+0
+0.
+
+Example case 6: Number 
+ 
+=
+48
+N=48 has 
+2
+2 to the power of 
+4
+4 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Sample 2:
+Input
+Output
+4
+6
+12
+31
+41278242816000
+0
+1
+1
+1
+Explanation:
+Example case 1: Number 
+ 
+=
+6
+N=6 has 
+2
+2 to the power of 
+1
+1 in its prime factorization. Therefore, it is not lucky and the answer is 
+0
+0.
+
+Example case 2: Number 
+ 
+=
+12
+N=12 has 
+2
+2 to the power of 
+2
+2 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Example case 3: Number 
+ 
+=
+31
+N=31 has 
+2
+2 to the power of 
+0
+0 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.
+
+Example case 4: Number 
+ 
+=
+41278242816000
+N=41278242816000 has 
+2
+2 to the power of 
+24
+24 in its prime factorization. Therefore, it is lucky and the answer is 
+1
+1.            
+
+Solution
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    long long x;cin>>x;
+	    int i=0;
+	    while(x%2==0){
+	        x/=2;
+	        i++;
+	    }
+	    if(i%2==0)cout<<1<<endl;
+	    else cout<<0<<endl;
+	}
+	return 0;
+}
